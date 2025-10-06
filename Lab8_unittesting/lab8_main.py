@@ -2,9 +2,12 @@
 Idress Baguaei 
 Lab 8, unittest
 Sep 29, 2025 
+Oct 6, 2025 
 """
 import unittest
 import calculations
+from employee import Employee # import the emmployee 
+
 # function to add and return the sum of two numbers
 def addtwonumbers(a,b):
     return a+b
@@ -28,6 +31,39 @@ class TestCalculations(unittest.TestCase):
         self.assertAlmostEqual(calculations.dividetwonumbers(9,2),4.5)
         self.assertEqual(calculations.dividetwonumbers(9,0),-1)
         self.assertIsNone(calculations.dividetwonumbers("a",2))
+
+
+print("\n ------ Example 3: unitest for Employee")
+class TestEmployee(unittest.TestCase):
+    # create a test template 
+    def setUp(self):
+        self.emp1 = Employee('Peter', 'Pan', 50000)
+
+        # create a test fro emplyee email
+    def test_emailemployee(self):
+        self.assertEqual(self.emp1.emailemployee, 'Peter.Pan@email.com')
+
+    # create a test fro emplyee full 
+    def test_fullname(self):
+        self.assertEqual(self.emp1.fullname, 'Peter Pan')
+
+        # update the first name 
+        self.emp1.first = "Will"
+
+        #re-test full name 
+        self.assertEqual(self.emp1.fullname,'Will Pan')
+
+    # Create a test for salary 
+    def test_salary(self):
+        # raise the salary 
+        self.assertEqual(self.emp1.salary, 50000)
+        
+        # first, raise the salary 
+        self.emp1.apply_raise()
+        # second, test salary 
+        self.assertEqual(self.emp1.salary, 52500)
+
+
 
 
 if __name__ == "__main__":
