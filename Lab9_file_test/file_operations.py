@@ -9,10 +9,8 @@ def write_file(filename, msg):
 
 def read_file(filename):
     with open(filename, "r") as file:
-        file.readlines()
+        return file.read()   
 
-def append_file(filename):
+def append_file(filename, msg):
     with open(filename, "a") as file:
-        file.write("\n New line added.")
-        
-
+        file.write(msg)      
