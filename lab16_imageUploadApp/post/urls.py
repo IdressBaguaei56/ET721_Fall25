@@ -4,5 +4,5 @@ from .views import HomePageView, CreatePostView
 
 urlpatterns =[
     path("", HomePageView.as_view(), name ="home"),
-    path("", CreatePostView.as_view(), name = "ass_post"),
+    path("", CreatePostView.as_view(), name = "add_post"),
 ]

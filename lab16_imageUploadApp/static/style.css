@@ -1,0 +1,102 @@
+/* global reset / base */
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+body{
+    margin: 0;                         /* remove default browser margin       */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* home.html */
+.maincontainer{
+    width: 90%;
+    max-width: 900px;                  /* keeps the content from getting too wide */
+    margin: 5rem auto;
+    padding: 2rem;
+    border: solid lightblue 1px;
+    background-color: white;
+}
+
+.title{
+    text-align: center;
+}
+
+/* upload button */
+.upload_img_btn{
+    background-color: darkblue;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.upload_img_btn:hover{
+    background-color: crimson;
+}
+
+/* image cards container */
+.albumcontainer{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;           /* center cards */
+    gap: 2rem;                         /* space between cards if you have more than one */
+}
+
+/* individual card */
+.card{
+    width: 45%;
+    min-width: 260px;
+    padding: 2rem;
+    background-color: lightcyan;
+    box-shadow: 1px 1px 5px lightgray;
+}
+
+.card-title{
+    text-align: center;
+}
+
+/* image frame inside card */
+.card-img{
+    border: ridge 2px darkblue;
+    border-radius: 10px;
+    overflow: hidden;                  /* make the image follow rounded corners */
+}
+
+/* post.html */
+.posttitle{
+    text-align: center;
+    color: darkblue;
+}
+
+.form_post{
+    width: 700px;
+    max-width: 90%;
+    margin: 3rem auto;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: white;
+}
+
+/* submit button */
+.btnsubmit{
+    color: whitesmoke;
+    background-color: darkblue;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnsubmit:hover{
+    background-color: crimson;
+    font-weight: bolder;
+    box-shadow: 0px 0px 3px 1px gray;
+}
