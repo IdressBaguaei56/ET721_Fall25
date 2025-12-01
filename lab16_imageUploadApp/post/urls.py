@@ -1,8 +1,7 @@
 from django.urls import path
-
 from .views import HomePageView, CreatePostView
 
-urlpatterns =[
-    path("", HomePageView.as_view(), name ="home"),
-    path("", CreatePostView.as_view(), name = "add_post"),
+urlpatterns = [
+    path("", HomePageView.as_view(), name="home"),               # homepage
+    path("add_post/", CreatePostView.as_view(), name="add_post") # upload form
 ]
