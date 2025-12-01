@@ -58,7 +58,9 @@ class TestEmailReadLab10(unittest.TestCase):
         mtime_after = os.stat(self.path).st_mtime
 
         self.assertEqual(size_after, size_before, "File size changed—should only read.")
-        self.assertEqual(mtime_after, mtime_before, "File mtime changed—should only read.")
+        self.assertEqual(
+            mtime_after, mtime_before, "File mtime changed—should only read."
+        )
 
     def test_email_not_found(self):
 

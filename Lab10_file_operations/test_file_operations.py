@@ -1,11 +1,13 @@
 """
-Idress Baguaei 
-Oct 15, 2025 
-Lab 9 file operations test 
+Idress Baguaei
+Oct 15, 2025
+Lab 9 file operations test
 """
+
 import unittest
-import os 
+import os
 from file_operations import read_file, write_file, append_file
+
 
 class TestFileOperations(unittest.TestCase):
     def setUp(self):
@@ -14,7 +16,7 @@ class TestFileOperations(unittest.TestCase):
         self.msg = "Idress Baguaei"
 
     def tearDown(self):
-        # remove the test file after each test 
+        # remove the test file after each test
         if os.path.exists(self.filename):
             os.remove(self.filename)
 
@@ -22,7 +24,7 @@ class TestFileOperations(unittest.TestCase):
         # use your function to write
         write_file(self.filename, self.msg)
 
-        # verify file exists and content matches 
+        # verify file exists and content matches
         self.assertTrue(os.path.exists(self.filename))
         result = read_file(self.filename)
         self.assertEqual(result, self.msg)
@@ -36,7 +38,7 @@ class TestFileOperations(unittest.TestCase):
         self.assertEqual(data, expected_content)
 
     def test_append_file(self):
-        # test appending text to an existing file 
+        # test appending text to an existing file
         initial_content = "line one"
         append_content = "\nline two"
 
@@ -46,6 +48,7 @@ class TestFileOperations(unittest.TestCase):
         final_data = read_file(self.filename)
         self.assertEqual(final_data, initial_content + append_content)
 
-# run the unit tests automatically when the file is run 
+
+# run the unit tests automatically when the file is run
 if __name__ == "__main__":
     unittest.main()
