@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo"><a href="{% url 'post_list' %}">Simple Blog</a></h1>
+      <nav>
+        <a href="{% url 'post_list' %}">Home</a>
+        <a class="btn" href="{% url 'post_create' %}">New Post</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>ET721 Lab 19 — Django Blog</p>
+    </div>
+  </footer>
+</body>
+</html>

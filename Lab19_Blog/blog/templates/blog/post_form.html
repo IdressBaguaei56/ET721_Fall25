@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <div class="card">
+    <h2>{{ mode }} Post</h2>
+
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn" type="submit">Save</button>
+      <a class="btn-outline" href="{% url 'post_list' %}">Cancel</a>
+    </form>
+  </div>
+{% endblock %}
